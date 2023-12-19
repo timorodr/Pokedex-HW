@@ -1,0 +1,15 @@
+h1 {
+    color: red
+}
+ul {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: space-evenly;
+}
+img {
+    border: solid black;
+    
+    /* align-items: center;
+    justify-content: center; */
+}

@@ -3,13 +3,22 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>OG Pokedex</title>
+    <%- include("./css.ejs") %>
 </head>
 <body>
     <h1>Pokedex</h1>
+
     <nav>
         <a href="/pokemon/new">Add a new pokemon</a>
     </nav>
+    <ul>
+        <% for (let i = 0; i < pokemon.length; i++){ %>
+            <img src= <%= pokemon[i].img %>>
 
+        <% } %>
+    </ul>
 </body>
 </html>
+
+
