@@ -14,7 +14,7 @@
     </nav>
     <ul>
         <% for (let i = 0; i < pokemon.length; i++){ %>
-            <img src= <%= pokemon[i].img %>>
+            <a href="pokemon/<%= i %>"><img src= <%= pokemon[i].img %>> </a>
 
         <% } %>
     </ul>
