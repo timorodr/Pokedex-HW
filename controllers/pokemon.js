@@ -17,6 +17,8 @@ router.get("/new", (req, res) => {
 
 // ******** CREATE - receives form/button data and creates  new pokemon then redirect back to index
 router.post("/", (req, res) => {
+    const body = req.body
+    pokemon.push(body)
     // handle business in here
     res.redirect("/pokemon")
 })
@@ -25,6 +27,7 @@ router.post("/", (req, res) => {
 router. delete("/:id", (req, res) => {
     const id = req.params.id
     // splice the array
+    pokemon.splice(id, 1)
     res.redirect("/pokemon")
 })
 
@@ -32,12 +35,15 @@ router. delete("/:id", (req, res) => {
 router.get("/:id/edit", (req, res) => {
     const id = req.params.id
     // pokemons id into a pokemon
-    const pokemon = pokemons[id]
-    res.render("pokemon/edit.ejs", {pokemon, id})
+    const poke = pokemon[id]
+    res.render("pokemon/edit.ejs", {poke, id})
 })
 
 // ********* UPDATE - receives form data, updates
 router.put("/:id", (req, res) => {
+    const id = req.params.id
+    const body = req.body
+    pokemon[id] = body
     res.redirect("/pokemon")
 })
 
@@ -45,7 +51,7 @@ router.put("/:id", (req, res) => {
 // ******** SHOW
 router.get("/:id", (req, res) => {
     const id = req.params.id
-    const poke = pokemon[id]
+    
     res.render("pokemon/show.ejs", {pokemon, id})
 })
 
