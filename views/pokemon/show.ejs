@@ -7,7 +7,13 @@
 </head>
 <body>
     <h1>Pokemon show page</h1>
-    <a href="/pokemon">Back to Pokedex</a>
+    
     <img src= <%= pokemon[id].img %>>
+    <div class="show-id"> <%= pokemon[id].id %></div>
+    <div class="show-name"> <%= pokemon[id].name %></div>
+    <div class="show-type"> <%= pokemon[id].type %></div>
+    <div class="show-stats"> <%= Object.entries(pokemon[id].stats) %></div>
+
+    <a href="/pokemon">Back to Pokedex</a>
 </body>
 </html>

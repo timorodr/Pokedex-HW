@@ -12,12 +12,15 @@
     <nav>
         <a href="/pokemon/new">Add a new pokemon</a>
     </nav>
-    <ul>
-        <% for (let i = 0; i < pokemon.length; i++){ %>
-            <a href="pokemon/<%= i %>"><img src= <%= pokemon[i].img %>> </a>
+    <div class="poke-container">
+        <ul>
+            <% for (let i = 0; i < pokemon.length; i++){ %>
+                <a href="pokemon/<%= i %>"><img src= <%= pokemon[i].img %>> </a>
+                    <div class="dex-id"> <%= pokemon[i].id %></div>
 
-        <% } %>
-    </ul>
+            <% } %>
+        </ul>
+    </div>    
 </body>
 </html>
 

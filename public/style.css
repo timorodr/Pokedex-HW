@@ -9,7 +9,12 @@ ul {
 }
 img {
     border: solid black;
-    
+    /* max-width: 50%;
+    max-height: 50%; */
     /* align-items: center;
     justify-content: center; */
 }
+
+/* .poke-container {
+    width: 50%;
+} */
