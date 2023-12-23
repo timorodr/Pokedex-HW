@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edit</title>
+    <%- include("./css.ejs") %>
+</head>
+<body>
+    <h1>Edit <%= pokemon.name %></h1>
+    
+
+
+
+
+    <form action="/pokemons/<%= id %>?_method=PUT" method="post">
+        <label>Name: <input type="text" name="name" value="<%= pokemon.name %>"></label>
+       
+        
+        <input type="submit" value="Update <%= pokemon.name %>"/>
+        
+    </form>
+
+        <img src= <%= pokemon.img %>>
+        <div class="show-id"> <%= pokemon.id %></div>
+        <div class="show-name"> <%= pokemon.name %></div>
+
+</body>
+</html>

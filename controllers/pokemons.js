@@ -2,57 +2,63 @@ const express = require("express")
 
 const router = express.Router()
 
-const pokemon = require("../models/pokemon.js")
+const pokemons = require("../models/pokemons.js")
 
 
 // ******** INDEX - get request to pokemon
 router.get("/", (req, res) => {
-    res.render("pokemon/index.ejs", {pokemon})
+    res.render("pokemons/index.ejs", {pokemons})
 })
 
 // ******** NEW - render page with form/button to create new fruit
 router.get("/new", (req, res) => {
-    res.render("pokemon/new.ejs")
+    res.render("pokemons/new.ejs")
 })
 
 // ******** CREATE - receives form/button data and creates  new pokemon then redirect back to index
 router.post("/", (req, res) => {
     const body = req.body
-    pokemon.push(body)
+    
+    pokemons.push(body)
     // handle business in here
-    res.redirect("/pokemon")
+    res.redirect("/pokemons")
 })
 
 // ******** DESTROY - deletes a pokemon/redirects to index
-router. delete("/:id", (req, res) => {
+router.delete("/:id", (req, res) => {
     const id = req.params.id
     // splice the array
-    pokemon.splice(id, 1)
-    res.redirect("/pokemon")
+    pokemons.splice(id, 1)
+    res.redirect("/pokemons")
 })
 
 // ********* EDIT - render form/button a specific pokemon
 router.get("/:id/edit", (req, res) => {
     const id = req.params.id
+    const newName = req.body.name
     // pokemons id into a pokemon
-    const poke = pokemon[id]
-    res.render("pokemon/edit.ejs", {poke, id})
+    const pokemon = pokemons[id]
+    pokemon.name = newName
+    
+    res.render("pokemons/edit.ejs", {pokemon, id})
 })
 
 // ********* UPDATE - receives form data, updates
 router.put("/:id", (req, res) => {
     const id = req.params.id
     const body = req.body
-    pokemon[id] = body
-    res.redirect("/pokemon")
+    const newName = req.body.name
+    const pokemon = pokemons[id]
+    pokemon.name = newName
+    res.redirect("/pokemons")
 })
 
 
 // ******** SHOW
 router.get("/:id", (req, res) => {
     const id = req.params.id
-    
-    res.render("pokemon/show.ejs", {pokemon, id})
+    const pokemon = pokemons[id]
+    res.render("pokemons/show.ejs", {pokemon, id})
 })
 
 

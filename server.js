@@ -8,9 +8,9 @@ const methodOverride = require("method-override")
 
 
 
-const pokemonRouter = require("./controllers/pokemon.js")
+const pokemonsRouter = require("./controllers/pokemons.js")
 
-const pokemon = require("./models/pokemon.js")
+const pokemons = require("./models/pokemons.js")
 
 
 app.use(express.static("public"))
@@ -21,7 +21,7 @@ app.use(morgan("dev"))
 
 app.use(methodOverride("_method"))
 
-app.use("/pokemon", pokemonRouter)
+app.use("/pokemons", pokemonsRouter)
 
 
 

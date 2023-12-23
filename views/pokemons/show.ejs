@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <%- include("./css.ejs") %>
+</head>
+<body>
+    <a href="/pokemons">Back to Pokedex</a>
+    <h1>Pokemon show page</h1>
+    
+
+    <img src= <%= pokemon.img %>>
+    <div class="show-id"> <%= pokemon.id %></div>
+    <div class="show-name"> <%= pokemon.name %></div>
+    <div class="show-type">Type: <%= pokemon.type %></div>
+    <div class="show-stats">Stats: <%= Object.entries(pokemon.stats) %></div>
+    <div class="show-happy">Happiness: <%= pokemon.misc.happiness %></div>
+
+    <% if (pokemon.misc.sex.male > pokemon.misc.sex.female) {   %>
+        <h3>♂️</h3>
+    <% } else { %>
+        <h3>♀️</h3>
+    <% } %> 
+
+    <a href="/pokemons/<%= id %>/edit"><button>Edit Pokemon</button></a>
+    
+</body>
+</html>
