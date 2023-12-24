@@ -13,19 +13,19 @@
         <a href="/pokemons/new">Add a new pokemon</a>
     </nav>
     <div class="poke-container">
-        <ul>
+        <div class="dex-card"> <!-- controlling the children MIND CONTORL-->
             <% for (let i = 0; i < pokemons.length; i++){ %>
-                <a href="pokemons/<%= i %>"><img src= <%= pokemons[i].img %>> </a>
+                <div class="pokemon">
+                    <a href="pokemons/<%= i %>" class="dex-box"><img src= <%= pokemons[i].img %> class="dex-img"></a>
                     <div class="dex-id"> <%= pokemons[i].id %></div>
                     <div class="dex-name"> <%= pokemons[i].name %></div>
-                    
 
-                    <form action="/pokemons/<%= i %>?_method=DELETE" method="post">
+                    <form action="/pokemons/<%= i %>?_method=DELETE" method="post" class="delete-form">
                         <input type="submit" value="delete">
                     </form>
-
-            <% } %>
-        </ul>
+                </div>
+            <% } %> 
+        </div>     
     </div>    
 </body>
 </html>

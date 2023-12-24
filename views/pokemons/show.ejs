@@ -11,11 +11,11 @@
     <h1>Pokemon show page</h1>
     
 
-    <img src= <%= pokemon.img %>>
+    <img src= <%= pokemon.img %> class="show-pokemon-img">
     <div class="show-id"> <%= pokemon.id %></div>
     <div class="show-name"> <%= pokemon.name %></div>
     <div class="show-type">Type: <%= pokemon.type %></div>
-    <div class="show-stats">Stats: <%= Object.entries(pokemon.stats) %></div>
+    <div class="show-stats">Stats: <%= Object.entries(pokemon.stats).map(space => space.join(': ')).join(', ') %></div>
     <div class="show-happy">Happiness: <%= pokemon.misc.happiness %></div>
 
     <% if (pokemon.misc.sex.male > pokemon.misc.sex.female) {   %>

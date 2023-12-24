@@ -16,7 +16,13 @@
     <form action="/pokemons/<%= id %>?_method=PUT" method="post">
         <label>Name: <input type="text" name="name" value="<%= pokemon.name %>"></label>
        
-        
+        <label>Add Pokemon: <input type="checkbox" name="addPokemon" 
+            
+            <% if(pokemon.addPokemon === true) { %>
+                checked
+            <% } %>
+
+            ></label> <%# boolean needs checkbox type %>
         <input type="submit" value="Update <%= pokemon.name %>"/>
         
     </form>
