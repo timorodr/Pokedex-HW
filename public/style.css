@@ -1,14 +1,43 @@
-body {
+#index-body {
     padding: 1rem;
+    background-color: red;
+    font-family: 'Rajdhani', sans-serif;
+    font-weight: 600;
 }
 
 h1 {
-    color: red;
+    color: whitesmoke;
     text-align: center;
+    font-family: 'Rajdhani', sans-serif;
 }
 
+nav {
+    padding: 1rem;
+    display: flex;
+    justify-content: center;
+    font-family: 'Rajdhani', sans-serif;
+}
+.link-to-new:link, .link-to-new:visited, #show-link:link, #show-link:visited, button {
+    background-color: whitesmoke;
+    color: black;
+    border: 2px solid rgb(174, 165, 165);
+    border-radius: 10px;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-family: 'Rajdhani', sans-serif;
+}
+      
+.link-to-new:hover, .link-to-new:active, #show-link:hover, #show-link:active, button {
+    background-color: rgb(208, 58, 58);
+    color: whitesmoke;
+    font-family: 'Rajdhani', sans-serif;
+}
+
+
 .poke-container {
-    border: solid red;
+    border: 3px double rgb(174, 165, 165);
     padding: 1rem;
     border-radius: 10px;
     background-color: rgba(255, 255, 255, 0.946);
@@ -34,7 +63,7 @@ img {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    border: 2px solid black;
+    border: 2px double black;
     padding: .5rem;
     border-radius: 10px;
     background: linear-gradient(white 0 55%, rgb(174, 165, 165) 55% 100%);
@@ -60,9 +89,14 @@ img {
 }
 
 /******* NEW PAGE *********/
-#newform {
+#newform, #editform {
     width: 90%;
     box-sizing: border-box;
+    font-family: 'Rajdhani', sans-serif;
+}
+
+#new-page-body, #edit-page-body {
+    background-color: whitesmoke;
 }
 
 fieldset {
@@ -75,6 +109,8 @@ fieldset {
 legend {
     padding: 0px 10px;
     color: red;
+    text-align: center;
+    font-weight: bolder;
 }
 
 label {
@@ -83,7 +119,7 @@ label {
     display: block;
 }
 
-.new-input {
+.new-input, .edit-input {
     width: 100%;
     margin: 10px 0;
     padding: 10px;
@@ -91,12 +127,12 @@ label {
     border-radius: 5px;
 }
 
-.new-input:focus {
+.new-input:focus, .edit-input:focus {
     outline: 0;
     border: 5px solid red;
 }
 
-.new-input[type="submit"] {
+.new-input[type="submit"], .edit-input[type="submit"] {
     width: 100%;
     height: 50px;
     background-color: red;
@@ -105,15 +141,16 @@ label {
     color: whitesmoke;
     border: 0px;
     transition: 0.2s ease-in-out;
+    font-family: 'Rajdhani', sans-serif;
 }
 
-.new-input[type="submit"]:hover {
+.new-input[type="submit"]:hover, .edit-input[type="submit"]:hover {
     cursor: pointer;
     background-color: rgb(174, 165, 165);
     box-shadow: 2px 2px red;
 }
 
-#new-body {
+#new-body, #edit-body {
     margin: 0 auto;
     display: flex;
     align-items: center;
@@ -121,6 +158,54 @@ label {
 }
 
 
+/********** SHOW PAGE *******/
+#show-body {
+    background-color: #f4f4f4;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
 
+.poke-card {
+    background: linear-gradient(white 0 55%, rgb(174, 165, 165) 55% 100%);
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    padding: 20x;
+    text-align: center;
+    margin: 10px
+}
 
+.show-pokemon-img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 5px;
+}
+
+.show-id, .show-name, .show-type, .show-stats, .show-happy, .show-gender {
+    margin-top: 10px;
+    text-align: left;
+    font-family: 'Rajdhani', sans-serif;
+    font-weight: 600;
+}
+
+#male {
+    color: rgb(0, 195, 255);
+    font-family: 'Rajdhani', sans-serif;
+}
+
+#female {
+    color: pink;
+    font-family: 'Rajdhani', sans-serif;
+}
+
+button {
+    height: 2.8rem;
+    width: 9rem;
+}
+
+button:hover {
+    background-color: white;
+}
 

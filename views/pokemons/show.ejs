@@ -6,24 +6,26 @@
     <title>Document</title>
     <%- include("./css.ejs") %>
 </head>
-<body>
-    <a href="/pokemons">Back to Pokedex</a>
-    <h1>Pokemon show page</h1>
+<body id="show-body">
+    <a href="/pokemons" id="show-link">Back to Pokedex</a>
+    <!-- <h1 id="show-h1">Pokemon show page</h1> -->
     
 
-    <img src= <%= pokemon.img %> class="show-pokemon-img">
-    <div class="show-id"> <%= pokemon.id %></div>
-    <div class="show-name"> <%= pokemon.name %></div>
-    <div class="show-type">Type: <%= pokemon.type %></div>
-    <div class="show-stats">Stats: <%= Object.entries(pokemon.stats).map(space => space.join(': ')).join(', ') %></div>
-    <div class="show-happy">Happiness: <%= pokemon.misc.happiness %></div>
+    <div class="poke-card">
+        <img src= <%= pokemon.img %> class="show-pokemon-img">
+        <div class="show-id"> <%= pokemon.id %></div>
+        <div class="show-name"> <%= pokemon.name %></div>
+        <div class="show-type">Type: <%= pokemon.type %></div>
+        <div class="show-stats">Stats: <%= Object.entries(pokemon.stats).map(space => space.join(': ')).join(', ') %></div>
+        <div class="show-happy">Happiness: <%= pokemon.misc.happiness %></div>
+    
 
-    <% if (pokemon.misc.sex.male > pokemon.misc.sex.female) {   %>
-        <h3>♂️</h3>
-    <% } else { %>
-        <h3>♀️</h3>
-    <% } %> 
-
+        <% if (pokemon.misc.sex.male > pokemon.misc.sex.female) {   %>
+            <div class="show-gender" id="male">♂️</div>
+        <% } else { %>
+            <div class="show-gender" id="female">♀️</div>
+        <% } %> 
+    </div>
     <a href="/pokemons/<%= id %>/edit"><button>Edit Pokemon</button></a>
     
 </body>

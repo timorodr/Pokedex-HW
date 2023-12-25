@@ -6,30 +6,22 @@
     <title>Edit</title>
     <%- include("./css.ejs") %>
 </head>
-<body>
-    <h1>Edit <%= pokemon.name %></h1>
-    
+<body id="edit-page-body">
+    <div id="edit-body">
+        <h1>Edit <%= pokemon.name %></h1>
+        <form action="/pokemons/<%= id %>?_method=PUT" method="post" id="editform">
+            <fieldset id="editpokemon">
+                <legend>Edit Pokemon</legend>
+                    <label for="name">Name: </label>
+                    <input type="text" name="name" value="<%= pokemon.name %>" class="edit-input">
+                    <label for="id">ID: </label>
+                    <input type="text" name="id" value="<%= pokemon.id %>" class="edit-input">
+                <input type="submit" value="Update <%= pokemon.name %>" class="edit-input"/>
+            </fieldset>    
+        </form>
+    </div>
 
-
-
-
-    <form action="/pokemons/<%= id %>?_method=PUT" method="post">
-        <label>Name: <input type="text" name="name" value="<%= pokemon.name %>"></label>
-       
-        <label>Add Pokemon: <input type="checkbox" name="addPokemon" 
-            
-            <% if(pokemon.addPokemon === true) { %>
-                checked
-            <% } %>
-
-            ></label> <%# boolean needs checkbox type %>
-        <input type="submit" value="Update <%= pokemon.name %>"/>
         
-    </form>
-
-        <img src= <%= pokemon.img %>>
-        <div class="show-id"> <%= pokemon.id %></div>
-        <div class="show-name"> <%= pokemon.name %></div>
 
 </body>
 </html>

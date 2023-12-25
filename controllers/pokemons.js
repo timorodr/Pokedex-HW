@@ -69,14 +69,11 @@ router.get("/:id/edit", (req, res) => {
 router.put("/:id", (req, res) => {
     const id = req.params.id
     const body = req.body
-    if(body.addPokemon === "on") {
-        body.addPokemon = true
-    } else {
-        body.addPokemon = false
-    }
     const newName = req.body.name
     const pokemon = pokemons[id]
     pokemon.name = newName
+    const newId = req.body.id
+    pokemon.id = newId
     res.redirect("/pokemons")
 })
 

@@ -6,15 +6,15 @@
     <title>New</title>
     <%- include("./css.ejs") %>
 </head>
-<body>
+<body id="new-page-body">
     <div id="new-body">
         <h1>New Pokemon</h1>
         <form action="/pokemons" method="post" id="newform">
             <fieldset id="newpokemon">
-                <legend>Add a pokemon to the pokedex</legend>
+                <legend>Add a pokemon to the Pokedex</legend>
                     <label for="name">Name: </label>
-                        <input type="text" name="name" class="new-input">
-                    <input type="submit" value="Create Pokemon" class="new-input"/>
+                    <input type="text" name="name" class="new-input">
+                <input type="submit" value="Create Pokemon" class="new-input"/>
             </fieldset>
         </form>
     </div>
