@@ -24,11 +24,7 @@ router.get("/new", (req, res) => {
 // ******** CREATE - receives form/button data and creates  new pokemon then redirect back to index
 router.post("/", (req, res) => {
     const body = req.body
-    if(body.addPokemon === "on") {
-        body.addPokemon = true
-    } else {
-        body.addPokemon = false
-    }
+   
     console.log("req.body", req.body)
     // Build the pokemon before we push to the array
     let newPokemon = {
@@ -36,7 +32,7 @@ router.post("/", (req, res) => {
         
         // Overwrite/rewrite/reassign the pokemon template with our form data
         name: req.body.name,
-        img: "https://i.etsystatic.com/33357979/r/il/e1dfcd/3584257734/il_570xN.3584257734_bfy9.jpg"
+        img: ["https://images5.fanpop.com/image/photos/26800000/Moustache-Pikachu-FTW-random-26829391-500-500.jpg"]
 
     }
     console.log(newPokemon)
