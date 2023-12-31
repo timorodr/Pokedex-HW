@@ -9,6 +9,7 @@ h1 {
     color: whitesmoke;
     text-align: center;
     font-family: 'Rajdhani', sans-serif;
+    font-size: 50px;
 }
 
 nav {
@@ -30,7 +31,7 @@ nav {
 }
       
 .link-to-new:hover, .link-to-new:active, #show-link:hover, #show-link:active, button {
-    background-color: rgb(208, 58, 58);
+    background-color: green;
     color: whitesmoke;
     font-family: 'Rajdhani', sans-serif;
 }
@@ -125,6 +126,7 @@ legend {
     color: red;
     text-align: center;
     font-weight: bolder;
+    font-size: 28px;
 }
 
 label {
