@@ -32,11 +32,12 @@ router.post("/", (req, res) => {
         
         // Overwrite/rewrite/reassign the pokemon template with our form data
         name: req.body.name,
-        img: ["https://images5.fanpop.com/image/photos/26800000/Moustache-Pikachu-FTW-random-26829391-500-500.jpg"]
-
+        img: "https://images5.fanpop.com/image/photos/26800000/Moustache-Pikachu-FTW-random-26829391-500-500.jpg",
+        id: "Your fav number ID number",
+        stats:"MOUSTACHE PIKACHU IS EVOLVING".split("   ")
     }
-    console.log(newPokemon)
-
+    // console.log(newPokemon)
+    
     pokemons.unshift(newPokemon)
     // handle business in here
     res.redirect("/pokemons")
@@ -78,7 +79,6 @@ router.put("/:id", (req, res) => {
 router.get("/:id", (req, res) => {
     const id = req.params.id
     const pokemon = pokemons[id]
-    console.log(pokemon)
     res.render("pokemons/show.ejs", {pokemon, id})
 })
 

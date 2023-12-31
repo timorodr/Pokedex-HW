@@ -79,12 +79,26 @@ img {
     .dex-card {
         grid-template-columns: 1fr 1fr 1fr;
     }
+    .show-id, .show-name, .show-type, .show-stats, .show-happy, .show-gender {
+        margin-top: 10px;
+        text-align: center;
+        font-family: 'Rajdhani', sans-serif;
+        font-weight: 600;
+        font-size: 5px;
+    }
 }
 
 
 @media (max-width: 400px) {
     .dex-card {
         grid-template-columns: 1fr 1fr;
+    }
+    .show-id, .show-name, .show-type, .show-stats, .show-happy, .show-gender {
+        margin-top: 10px;
+        text-align: center;
+        font-family: 'Rajdhani', sans-serif;
+        font-weight: 600;
+        font-size: 5px;
     }
 }
 
@@ -169,7 +183,7 @@ label {
 }
 
 .poke-card {
-    background: linear-gradient(white 0 55%, rgb(174, 165, 165) 55% 100%);
+    background: linear-gradient(white 0 55%, rgb(122, 119, 119) 55% 100%);
     border-radius: 10px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     padding: 20x;
@@ -185,9 +199,14 @@ label {
 
 .show-id, .show-name, .show-type, .show-stats, .show-happy, .show-gender {
     margin-top: 10px;
-    text-align: left;
+    text-align: center;
     font-family: 'Rajdhani', sans-serif;
     font-weight: 600;
+    font-size: 20px;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
 }
 
 #male {
@@ -203,9 +222,19 @@ label {
 button {
     height: 2.8rem;
     width: 9rem;
+    background-color: whitesmoke;
+    z-index: -3;
+    color: black;
+    font-size: medium;
 }
 
 button:hover {
-    background-color: white;
+    background-color: green;
 }
 
+.show-gender {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 30px;
+}
