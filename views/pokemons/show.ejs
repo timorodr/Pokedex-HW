@@ -16,7 +16,7 @@
         <img src= <%= pokemon.img %> class="show-pokemon-img">
         <div class="show-id"> <%= pokemon.id %></div>
         <div class="show-name"> <%= pokemon.name %></div>
-        <div class="show-type">Type: <%= pokemon.type.join(', ') %></div>
+        <div class="show-type">Type: <%= pokemon.type %></div>
         <div class="show-stats">Stats: <%= Object.entries(pokemon.stats).map(stat => stat.join(': ')).join(' ') %></div>
         <div class="show-happy">Happiness: <%= pokemon.misc.happiness %></div>
     

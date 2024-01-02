@@ -34,7 +34,8 @@ router.post("/", (req, res) => {
         name: req.body.name,
         img: "https://images5.fanpop.com/image/photos/26800000/Moustache-Pikachu-FTW-random-26829391-500-500.jpg",
         id: "Your fav number ID number",
-        stats:"MOUSTACHE PIKACHU IS EVOLVING".split("   ")
+        stats: "MOUSTACHE PIKACHU IS EVOLVING".split("\n"),
+        type: "I aint got no type",
     }
     // console.log(newPokemon)
     
