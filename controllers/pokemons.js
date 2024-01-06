@@ -10,14 +10,9 @@ router.get("/", (req, res) => {
     res.render("pokemons/index.ejs", {pokemons})
 })
 
-// ******** NEW - render page with form/button to create new fruit
+// ******** NEW - render page with form/button to create new pokemon
 router.get("/new", (req, res) => {
-    const body = req.body
-    if(body.addPokemon === "on") {
-        body.addPokemon = true
-    } else {
-        body.addPokemon = false
-    }
+ 
     res.render("pokemons/new.ejs", {pokemons})
 })
 
@@ -29,7 +24,6 @@ router.post("/", (req, res) => {
     // Build the pokemon before we push to the array
     let newPokemon = {
         ...pokemons[0], // Spread op creates a shallow copy of the pokemon data structure!
-        
         // Overwrite/rewrite/reassign the pokemon template with our form data
         name: req.body.name,
         img: "https://images5.fanpop.com/image/photos/26800000/Moustache-Pikachu-FTW-random-26829391-500-500.jpg",
@@ -37,10 +31,7 @@ router.post("/", (req, res) => {
         stats: "MOUSTACHE PIKACHU IS EVOLVING".split("\n"),
         type: "I aint got no type",
     }
-    // console.log(newPokemon)
-    
     pokemons.unshift(newPokemon)
-    // handle business in here
     res.redirect("/pokemons")
 })
 
